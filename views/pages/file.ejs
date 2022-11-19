@@ -5,18 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
 </head>
 <body>
-   <div>
-    <% products.forEach(function(product){%> 
-        <li>
-            <strong>
+
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+              <% products.forEach(function(product){%> 
+            <tr><img src=<%=product.image %>alt=""<td>
+            <tr>
                 <%= product.title %>
-            </strong>
+            </tr>
+            <tr>
             representing <%= product.price %>,
-           
-        </li>
-        <%});%>
-   </div>
-</body>
+    </tr>
+    <%});%>
+     
+        </tbody>
+    </table>
+</div>
+
+
+   </body>
 </html>
+
+

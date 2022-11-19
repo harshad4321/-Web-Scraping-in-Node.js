@@ -31,6 +31,7 @@ async function fetchData() {
         const products = []
 
         document.querySelectorAll(".s-card-container ").forEach(element => {
+
             products.push({
                 image: element.querySelector(".s-image").src,
                 title: document.querySelector(" h2 span").textContent,
@@ -44,12 +45,15 @@ async function fetchData() {
     }
 
 }
-
+// const products = fetchData()
+// console.log(products);
 
 app.get('/', async (req, res) => {
     const products = await fetchData()
     // res.send(products)
-    res.render('pages/file.ejs', { products })
+    res.send(products)
+
+    // res.render('pages/file.ejs', { products })
 })
 
 
